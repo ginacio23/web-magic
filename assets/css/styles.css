@@ -1,0 +1,339 @@
+:root{
+    --color-principal: #08090A;
+    --color-secondary: #c3423f;
+    --color-tertiary: #f9c22e;
+
+    
+}
+
+body{
+    background-color: #000 !important;
+}
+
+.navegacion{
+    padding: 10px;
+    background-color: var(--color-principal);
+}
+
+.nav__svg{
+    stroke-dasharray: 2000;    /* Ajustá según el tamaño del trazo */
+    stroke-dashoffset: 2000;   /* El trazo comienza oculto */
+    animation: draw 2s linear forwards;
+}
+
+/* Animación para dibujar el trazo */
+@keyframes draw {
+    to {
+        stroke-dashoffset: 0;  /* Se dibuja el trazo completo */
+    }
+}
+
+li{
+    color: white;
+    margin-right: 20px;
+    font-family: "Abel"; 
+    transition: all 300ms ease-in-out;
+}
+
+li:hover{
+    text-decoration: underline;
+    text-decoration-color: var(--color-secondary);
+    text-decoration-thickness: 2px;
+
+}
+
+a{
+    color: white !important;
+}
+
+.titles-principal{
+    color: rgb(241, 241, 241) !important;
+    font-family: "Abel";
+    font-size: 4rem !important;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+
+    transform: translate(-50%, -50%);
+    opacity: 0; 
+    animation: fadeInUp 1s ease-out forwards;
+}
+
+.titles-secondary{
+    color: rgb(241, 241, 241) !important;
+    font-family: "Abel";
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    animation: fadeInUp 1s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/*   ************************************* */
+.container-banner{   
+    height: 100vh;
+    background-image: url(../img/banner3.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #000;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.banner__titles{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* ****ABOUT ME ********** */
+.container-about-me{
+
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+.about-me__container-image{
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+
+.about-me__image{
+    object-fit: cover;
+}
+
+
+.icon-me {
+    color: var(--color-tertiary);
+    font-size: 4rem;
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    font-weight: 100;
+
+    transform: translateX(-50%); /* Corregido: centrar horizontalmente */
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-30px);
+    }
+    60% {
+        transform: translateY(-15px);
+    }
+}
+
+
+.container__text{
+    border: solid 3px var(--color-tertiary);
+    height: 80vh;
+    border-radius: 10px;
+    padding: 20px;
+    box-sizing: border-box;   
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+
+.about-me__text{
+    color:rgb(241, 241, 241) !important;
+    font-family: "Abel" !important;
+    font-size: 1.3rem !important;
+}
+
+@media (max-width: 480px){
+
+    html{
+        font-size: 8px !important;
+    }
+    .about-me__text{
+        border: none;
+        font-size: 2rem !important;
+
+    }
+}
+
+@media (min-width: 991px){
+  .icon-me{
+    display: none !important;
+  }
+}
+
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+      transform: translateY(0);
+    }
+    40% {
+      transform: translateY(-30px);
+    }
+    60% {
+      transform: translateY(-15px);
+    }
+  }
+
+  /* *********SHOWS *************/
+  .shows{
+    margin-top: 5rem;
+  }
+  
+  .container__shows{
+    display: flex;
+    align-items: start;
+    justify-content: center;
+  }
+
+  .shows__container-title{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .shows__title{
+    font-family: "Abel" !important;
+    font-size: 5rem !important;
+  }
+
+  .shows__type{
+    /* border-bottom: solid 2px var(--color-tertiary);
+    border-right: solid 2px var(--color-tertiary); APLICAR PARA PANTANLLAS GRANDES */
+    margin-top: 3rem !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    transform: scale(0);
+    transition: all 0.3s ease-in;
+    transition-delay: 0.3s;
+
+    /* transition: all 400ms ease-in-out;
+    animation: zoom 1s ease-in; */
+    padding: 4rem
+
+  }
+
+  .colorRojo{
+    transform: scale(1);
+
+  }
+
+  @keyframes zoom {
+    0%{
+        transform: scale(0);
+    }
+    25%{
+        transform: scale(0.25);
+    }
+    50%{
+        transform: scale(0.50);
+    }
+    75%{
+        transform: scale(0.75);
+    }
+    100%{
+        transform: scale(1);
+    }
+  }
+
+  .shows__type:hover{
+    background-color: rgba(57, 57, 57, 0.3); 
+    background-blend-mode: overlay;
+    border: rgba(57, 57, 57, 0.8) solid 1px;
+    border-radius: 4rem;
+  }
+
+  
+
+  .close__title{
+    font-family: "Abel" !important;
+    font-size: 2rem !important;
+    border: 2px solid var(--color-secondary);
+    border-radius: 2rem;
+    padding: 20px;
+    box-sizing: border-box;
+
+    color: white !important;
+    text-align: center;
+
+    margin-bottom: 20px;
+  }
+
+  .close__title:hover{
+    background-color: var(--color-secondary);
+    transition: all 200ms ease-in-out;
+  }
+
+  .close__text{
+    width: 75%;
+    color: white !important;
+    font-size: 1.5rem !important;
+  }
+
+  /* *******GALERIA ************* */
+  .gallery{
+    overflow: hidden;
+    max-width: 100%;
+
+    columns: 5 320px;
+    column-gap: 0.5em;
+
+    margin-bottom: 100px;
+    padding: 50px;
+  }
+  
+  .gallery__img{
+    max-width: 100%;
+    margin-bottom: 0.5em;
+    display: block;
+    border-radius: 20px;
+    outline: 2px solid rgba(0 , 0, 0, 0.5);
+    outline-offset: -10px;
+
+    transition: transform 0.4s ease-in-out;
+  }
+
+  .gallery__img:hover{
+    transform: scale(1.2);
+  }
+
+  /*  FORMULARIO */
+
+  .container-form{
+    background-color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    width: 50%;
+    margin: 0 auto;
+
+    margin-bottom: 4rem;
+  }
